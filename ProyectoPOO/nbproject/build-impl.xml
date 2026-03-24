@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    *** GENERATED FILE — NO EDITAR MANUALMENTE ***
+    NetBeans generará/sobreescribirá este archivo al abrir el proyecto.
+-->
+<project name="ProyectoPOO-impl" basedir="..">
+    <property file="nbproject/private/private.properties"/>
+    <property file="nbproject/project.properties"/>
+
+    <target name="-init-macrodef-javac">
+        <macrodef name="javac">
+            <attribute name="srcdir" default="${src.dir}"/>
+            <attribute name="destdir" default="${build.classes.dir}"/>
+            <sequential>
+                <mkdir dir="@{destdir}"/>
+                <javac srcdir="@{srcdir}" destdir="@{destdir}"
+                       source="${javac.source}" target="${javac.target}"
+                       includeantruntime="false"/>
+            </sequential>
+        </macrodef>
+    </target>
+
+    <target name="compile" depends="-init-macrodef-javac">
+        <javac/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${main.class}" classpath="${build.classes.dir}" fork="true"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.jar}" manifest="manifest.mf">
+            <fileset dir="${build.classes.dir}"/>
+        </jar>
+    </target>
+</project>
