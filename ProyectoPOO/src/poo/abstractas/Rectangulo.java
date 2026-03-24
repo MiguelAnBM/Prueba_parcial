@@ -3,31 +3,51 @@ package poo.abstractas;
 /**
  * TEMA: Herencia — Clases Abstractas — Sobreescritura (@Override)
  *
- * RELACIÓN EN DIAGRAMA DE CLASES:  Rectangulo ──▷ FiguraGeometrica
- *
- * INSTRUCCIONES:
- *
- * 1. Indica que Rectangulo HEREDA de FiguraGeometrica.
- *
- * 2. Declara los atributos PRIVADOS:
- *       base (double), altura (double)
- *
- * 3. Crea el CONSTRUCTOR CON PARÁMETROS (String color, double base, double altura):
- *       - Llama a super("Rectángulo", color)
- *       - Asigna base y altura.
- *
- * 4. Crea los GET y SET para base y altura.
- *    Ambos setters deben validar que el valor sea > 0.
- *
- * 5. SOBREESCRIBE calcularArea() con @Override:
- *       Fórmula: base * altura
- *
- * 6. SOBREESCRIBE calcularPerimetro() con @Override:
- *       Fórmula: 2 * (base + altura)
- *
- * 7. SOBREESCRIBE dibujar() con @Override:
- *       Imprime un mensaje y una figura ASCII rectangular.
+ * Diagrama:  Rectangulo ──▷ FiguraGeometrica
  */
-public class Rectangulo {
+public class Rectangulo extends FiguraGeometrica {
 
+    private double base;
+    private double altura;
+
+    // ── Constructor ──────────────────────────────────────────────────────────
+    public Rectangulo(String color, double base, double altura) {
+        super("Rectángulo", color);
+        this.base   = base;
+        this.altura = altura;
+    }
+
+    // ── Getters y Setters ────────────────────────────────────────────────────
+    public double getBase()   { return base; }
+    public double getAltura() { return altura; }
+
+    public void setBase(double base) {
+        if (base > 0) this.base = base;
+        else System.out.println("Base inválida: " + base);
+    }
+
+    public void setAltura(double altura) {
+        if (altura > 0) this.altura = altura;
+        else System.out.println("Altura inválida: " + altura);
+    }
+
+    // ── Métodos sobreescritos ────────────────────────────────────────────────
+    @Override
+    public double calcularArea() {
+        return base * altura;
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return 2 * (base + altura);
+    }
+
+    @Override
+    public void dibujar() {
+        System.out.println("\n  Dibujando Rectángulo de base " + base + " y altura " + altura + ":");
+        System.out.println("  +------------+");
+        System.out.println("  |            |");
+        System.out.println("  |            |");
+        System.out.println("  +------------+");
+    }
 }

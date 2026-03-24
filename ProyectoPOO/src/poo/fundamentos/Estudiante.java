@@ -3,38 +3,77 @@ package poo.fundamentos;
 /**
  * TEMA: Herencia — Constructores — Sobreescritura (@Override)
  *
- * RELACIÓN EN DIAGRAMA DE CLASES:  Estudiante ──▷ Persona
- *
- * INSTRUCCIONES:
- *
- * 1. Indica que Estudiante HEREDA de Persona
- *    (usa la palabra reservada correcta en la declaración de la clase).
- *
- * 2. Declara los siguientes atributos PRIVADOS propios del Estudiante:
- *       codigoEstudiante (String), carrera (String),
- *       promedio (double), semestre (int)
- *
- * 3. Crea el CONSTRUCTOR POR DEFECTO:
- *       - Llama al constructor del padre usando super()
- *       - Inicializa: codigoEstudiante="E000", carrera="Sin carrera",
- *         promedio=0.0, semestre=1
- *
- * 4. Crea el CONSTRUCTOR CON PARÁMETROS:
- *       (String nombre, String apellido, int edad, String identificacion,
- *        String codigoEstudiante, String carrera, int semestre)
- *       - Usa super(nombre, apellido, edad, identificacion) para los datos del padre.
- *       - Asigna los atributos propios. El promedio inicia en 0.0.
- *
- * 5. Crea los GET y SET para los 4 atributos propios.
- *    setPromedio() debe validar que el valor esté entre 0.0 y 5.0.
- *
- * 6. SOBREESCRIBE el método presentarse() usando @Override:
- *       - Primero llama a super.presentarse() para reutilizar el padre.
- *       - Luego imprime:
- *         "  → Soy estudiante de <carrera> | Código: <cod> | Semestre: <sem> | Promedio: <prom>"
- *
- * 7. Crea el método estaAprobado() que retorne true si promedio >= 3.0.
+ * Diagrama:  Estudiante ──▷ Persona
  */
-public class Estudiante {
+public class Estudiante extends Persona {
 
+    // Atributos propios del Estudiante
+    private String codigoEstudiante;
+    private String carrera;
+    private double promedio;
+    private int    semestre;
+
+    // ── Constructor por defecto ──────────────────────────────────────────────
+    public Estudiante() {
+        super();
+        this.codigoEstudiante = "E000";
+        this.carrera          = "Sin carrera";
+        this.promedio         = 0.0;
+        this.semestre         = 1;
+    }
+
+    // ── Constructor con parámetros ───────────────────────────────────────────
+    public Estudiante(String nombre, String apellido, int edad, String identificacion,
+                      String codigoEstudiante, String carrera, int semestre) {
+        super(nombre, apellido, edad, identificacion);
+        this.codigoEstudiante = codigoEstudiante;
+        this.carrera          = carrera;
+        this.semestre         = semestre;
+        this.promedio         = 0.0;   // el promedio siempre inicia en 0
+    }
+
+    // ── Getters ──────────────────────────────────────────────────────────────
+    public String getCodigoEstudiante() { return codigoEstudiante; }
+    public String getCarrera()          { return carrera; }
+    public double getPromedio()         { return promedio; }
+    public int    getSemestre()         { return semestre; }
+
+    // ── Setters ──────────────────────────────────────────────────────────────
+    public void setCodigoEstudiante(String codigoEstudiante) { this.codigoEstudiante = codigoEstudiante; }
+    public void setCarrera(String carrera)                   { this.carrera = carrera; }
+    public void setSemestre(int semestre)                    { this.semestre = semestre; }
+
+    /**
+     * TODO #3 — setPromedio con validación
+     *
+     * Completa este setter:
+     *   - Si el promedio está entre 0.0 y 5.0 (inclusive), asígnalo a this.promedio.
+     *   - Si NO es válido, imprime: "Promedio inválido: <valor>"
+     */
+    public void setPromedio(double promedio) {
+        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
+
+    }
+
+    // ── Sobreescritura (Polimorfismo en tiempo de ejecución) ─────────────────
+    @Override
+    public void presentarse() {
+        super.presentarse();   // reutiliza la presentación del padre
+        System.out.println("  → Soy estudiante de " + carrera
+                + " | Código: "   + codigoEstudiante
+                + " | Semestre: " + semestre
+                + " | Promedio: " + promedio);
+    }
+
+    /**
+     * TODO #4 — estaAprobado()
+     *
+     * Completa este método:
+     *   - Retorna true  si el promedio es mayor o igual a 3.0.
+     *   - Retorna false en caso contrario.
+     */
+    public boolean estaAprobado() {
+        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
+        return false;   // ← reemplaza esta línea con la condición correcta
+    }
 }

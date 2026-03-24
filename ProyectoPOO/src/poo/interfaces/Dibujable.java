@@ -1,18 +1,15 @@
 package poo.interfaces;
 
 /**
- * TEMA: Interfaces — segunda interfaz para mostrar implementación múltiple
- *
- * INSTRUCCIONES:
- *
- * 1. Cambia "class" por la palabra reservada correcta para declarar una INTERFAZ.
- *
- * 2. Declara el método abstracto:
- *       void dibujar()
- *
- * 3. Crea un método DEFAULT llamado mostrarTipo() que imprima:
- *       "  [Figura dibujable]"
+ * TEMA: Interfaces — segunda interfaz (implementación múltiple)
  */
-public class Dibujable {
+public interface Dibujable {
 
+    // Método abstracto: cada figura concreta define cómo se dibuja
+    void dibujar();
+
+    // Método default: comportamiento común a todas las figuras dibujables
+    default void mostrarTipo() {
+        System.out.println("  [Figura dibujable]");
+    }
 }

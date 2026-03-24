@@ -1,31 +1,71 @@
 package poo.fundamentos;
 
 /**
- * TEMA: Estructura POO — Encapsulación — Constructores — Get/Set
- *
- * INSTRUCCIONES:
- *
- * 1. Declara 4 atributos PRIVADOS (encapsulación):
- *       nombre (String), apellido (String), edad (int), identificacion (String)
- *
- * 2. Crea un CONSTRUCTOR POR DEFECTO que inicialice:
- *       nombre="Sin nombre", apellido="Sin apellido", edad=0, identificacion="000"
- *
- * 3. Crea un CONSTRUCTOR CON PARÁMETROS para los 4 atributos.
- *
- * 4. Crea los 4 métodos GET (uno por atributo).
- *
- * 5. Crea los 4 métodos SET:
- *       - setNombre, setApellido, setIdentificacion → asignación directa
- *       - setEdad → con VALIDACIÓN: solo asignar si está entre 0 y 120,
- *         si no, imprimir "Edad inválida: <valor>"
- *
- * 6. Crea el método getNombreCompleto() que retorne nombre + " " + apellido.
- *
- * 7. Crea el método presentarse() que imprima:
- *       "Hola, soy <nombreCompleto> | ID: <id> | Edad: <edad>"
- *    NOTA: este método será sobreescrito en las subclases (polimorfismo).
+ * TEMA: Encapsulación — Constructores — Get/Set
  */
 public class Persona {
 
+    // Atributos privados (Encapsulación)
+    private String nombre;
+    private String apellido;
+    private int    edad;
+    private String identificacion;
+
+    // ── Constructor por defecto ──────────────────────────────────────────────
+    public Persona() {
+        this.nombre         = "Sin nombre";
+        this.apellido       = "Sin apellido";
+        this.edad           = 0;
+        this.identificacion = "000";
+    }
+
+    // ── Constructor con parámetros ───────────────────────────────────────────
+    public Persona(String nombre, String apellido, int edad, String identificacion) {
+        this.nombre         = nombre;
+        this.apellido       = apellido;
+        this.edad           = edad;
+        this.identificacion = identificacion;
+    }
+
+    // ── Getters ──────────────────────────────────────────────────────────────
+    public String getNombre()         { return nombre; }
+    public String getApellido()       { return apellido; }
+    public int    getEdad()           { return edad; }
+    public String getIdentificacion() { return identificacion; }
+
+    // ── Setters ──────────────────────────────────────────────────────────────
+    public void setNombre(String nombre)               { this.nombre = nombre; }
+    public void setApellido(String apellido)           { this.apellido = apellido; }
+    public void setIdentificacion(String identificacion) { this.identificacion = identificacion; }
+
+    /**
+     * TODO #1 — setEdad con validación
+     *
+     * Completa este setter:
+     *   - Si la edad está entre 0 y 120 (inclusive), asígnala a this.edad.
+     *   - Si NO es válida, imprime: "Edad inválida: <valor>"
+     */
+    public void setEdad(int edad) {
+        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
+
+    }
+
+    // ── Métodos ──────────────────────────────────────────────────────────────
+    public String getNombreCompleto() {
+        return nombre + " " + apellido;
+    }
+
+    /**
+     * TODO #2 — presentarse()
+     *
+     * Completa este método. Debe imprimir exactamente:
+     *   "Hola, soy <nombreCompleto> | ID: <identificacion> | Edad: <edad>"
+     *
+     * Pista: usa getNombreCompleto() para obtener el nombre completo.
+     * NOTA: las subclases sobreescribirán este método (polimorfismo).
+     */
+    public void presentarse() {
+        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
+
+    }
 }
