@@ -1,2 +1,0 @@
-# prueba_parcial
-simulacro

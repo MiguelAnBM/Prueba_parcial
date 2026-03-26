@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="ProyectoPOO" default="compile" basedir=".">
-    <description>Proyecto POO - Fundamentos de Programación Orientada a Objetos</description>
-    <import file="nbproject/build-impl.xml"/>
-</project>
