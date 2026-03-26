@@ -61,13 +61,12 @@ public class Profesor extends Persona {
     }
 
     /**
-     * TODO #5 — calcularSalarioAnual()
+     * TODO #5 — calcularSalarioAnual() - HECHO
      *
      * Completa este método:
      *   - Retorna el salario mensual multiplicado por 12.
      */
     public double calcularSalarioAnual() {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-        return 0;   // ← reemplaza esta línea con el cálculo correcto
+        return salario * 12;
     }
 }

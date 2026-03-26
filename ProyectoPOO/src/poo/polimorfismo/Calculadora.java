@@ -26,15 +26,15 @@ public class Calculadora {
     }
 
     /**
-     * TODO #10 — sumar(String a, String b)
+     * TODO #10 — sumar(String a, String b) - HECHO
      *
      * Completa este método sobrecargado:
      *   1. Imprime: "  sumar(String, String)"
      *   2. Retorna la concatenación de los dos Strings (a + b).
      */
     public String sumar(String a, String b) {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-        return "";   // ← reemplaza esta línea
+        System.out.println("  sumar(String, String)  ");
+        return a + b;
     }
 
     // ── Versiones sobrecargadas de calcularArea() ────────────────────────────

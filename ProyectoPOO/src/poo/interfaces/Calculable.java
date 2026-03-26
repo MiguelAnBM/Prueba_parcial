@@ -13,7 +13,7 @@ public interface Calculable {
     double calcularPerimetro();
 
     /**
-     * TODO #6 — mostrarResultados()
+     * TODO #6 — mostrarResultados() - HECHO
      *
      * Completa este método default. Debe imprimir:
      *   "  Área       : <área con 2 decimales>"
@@ -25,7 +25,10 @@ public interface Calculable {
      * Los métodos default llevan la palabra reservada "default" antes del tipo.
      */
     default void mostrarResultados() {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-
+        String areaDecimales = String.format("%.2f", calcularArea());
+        String perimetroDecimales = String.format("%.2f", calcularPerimetro());
+        
+        System.out.println("Area       : " + areaDecimales);
+        System.out.println("Perimetro  : " + perimetroDecimales);
     }
 }

@@ -34,7 +34,7 @@ public abstract class FiguraGeometrica implements Calculable, Dibujable {
     public void   setColor(String c)   { this.color = c; }
 
     /**
-     * TODO #7 — describir()
+     * TODO #7 — describir() - HECHO
      *
      * Completa este método concreto. Debe:
      *   1. Imprimir: "\n[<nombre>] Color: <color>"
@@ -42,8 +42,8 @@ public abstract class FiguraGeometrica implements Calculable, Dibujable {
      *      (método default heredado de la interfaz Calculable)
      */
     public void describir() {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-
+        System.out.println("\n[" + nombre + "] Color: " + color);
+        mostrarResultados();
     }
 
     // ── Métodos abstractos: las subclases ESTÁN OBLIGADAS a implementarlos ───

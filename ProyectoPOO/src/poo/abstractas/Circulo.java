@@ -27,7 +27,7 @@ public class Circulo extends FiguraGeometrica {
     }
 
     /**
-     * TODO #8 — calcularArea()
+     * TODO #8 — calcularArea() - HECHO
      *
      * Completa este método sobreescrito:
      *   Fórmula: PI * radio * radio
@@ -35,8 +35,7 @@ public class Circulo extends FiguraGeometrica {
      */
     @Override
     public double calcularArea() {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-        return 0;   // ← reemplaza esta línea con la fórmula correcta
+        return PI * radio * radio;
     }
 
     @Override

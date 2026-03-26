@@ -44,15 +44,17 @@ public class Estudiante extends Persona {
     public void setSemestre(int semestre)                    { this.semestre = semestre; }
 
     /**
-     * TODO #3 — setPromedio con validación
+     * TODO #3 — setPromedio con validación - HECHO
      *
      * Completa este setter:
      *   - Si el promedio está entre 0.0 y 5.0 (inclusive), asígnalo a this.promedio.
      *   - Si NO es válido, imprime: "Promedio inválido: <valor>"
      */
     public void setPromedio(double promedio) {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-
+        if (promedio < 0.0 || promedio > 5.0) {
+            System.out.println("Promedio invalido: " + promedio);
+        }
+        this.promedio = promedio;
     }
 
     // ── Sobreescritura (Polimorfismo en tiempo de ejecución) ─────────────────
@@ -66,14 +68,13 @@ public class Estudiante extends Persona {
     }
 
     /**
-     * TODO #4 — estaAprobado()
+     * TODO #4 — estaAprobado() - HECHO
      *
      * Completa este método:
      *   - Retorna true  si el promedio es mayor o igual a 3.0.
      *   - Retorna false en caso contrario.
      */
     public boolean estaAprobado() {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-        return false;   // ← reemplaza esta línea con la condición correcta
+        return promedio >= 3.0;
     }
 }

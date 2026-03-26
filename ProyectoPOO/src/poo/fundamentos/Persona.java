@@ -39,15 +39,17 @@ public class Persona {
     public void setIdentificacion(String identificacion) { this.identificacion = identificacion; }
 
     /**
-     * TODO #1 — setEdad con validación
+     * TODO #1 — setEdad con validación - HECHO
      *
      * Completa este setter:
      *   - Si la edad está entre 0 y 120 (inclusive), asígnala a this.edad.
      *   - Si NO es válida, imprime: "Edad inválida: <valor>"
      */
     public void setEdad(int edad) {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-
+        if (edad < 0 || edad > 120) {
+            System.out.println("Edad invalida: " + edad);
+        }
+        this.edad = edad;
     }
 
     // ── Métodos ──────────────────────────────────────────────────────────────
@@ -56,7 +58,7 @@ public class Persona {
     }
 
     /**
-     * TODO #2 — presentarse()
+     * TODO #2 — presentarse() - HECHO
      *
      * Completa este método. Debe imprimir exactamente:
      *   "Hola, soy <nombreCompleto> | ID: <identificacion> | Edad: <edad>"
@@ -65,7 +67,6 @@ public class Persona {
      * NOTA: las subclases sobreescribirán este método (polimorfismo).
      */
     public void presentarse() {
-        // ── ESCRIBE TU CÓDIGO AQUÍ ──────────────────────────────────────────
-
+        System.out.println("Hola, soy " + getNombreCompleto() + " | " + "ID: " + identificacion + " | " + "Edad: " + edad);
     }
 }
